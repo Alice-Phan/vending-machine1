@@ -1,0 +1,11 @@
+Coke,2.50,10
+Sprite,2.65,5
+Iced Green Tea,3.15,10
+Cappuccino Coffee,4.15,10
+Hershey's Chocolate,3.75,5
+Orange Scones,3.15,8
+Blueberry Muffins,2.99,6
+Waffles,4.23,8
+Veggie Sticks and Peanut Butter,6.55,7
+
+
