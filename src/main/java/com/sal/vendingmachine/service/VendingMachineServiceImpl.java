@@ -68,6 +68,9 @@ public class VendingMachineServiceImpl implements VendingMachineService{
         // tell auditDao to write entry
         auditDao.writeAuditEntry("Item " + item.getName() + "added.");
         return item;
+        // Courtney's code:
+//        auditDao.writeAuditEntry(item.getName() + "added.");
+//        return dao.addItem(item);
 
     }
 
@@ -104,6 +107,8 @@ public class VendingMachineServiceImpl implements VendingMachineService{
         // so each time an item is sold, the quantity is subtracted by 1
         // also subtract the item cost from totalFunds
         dao.changeInventoryCount(item, item.getNumInventoryItems() - 1);
+
+
         auditDao.writeAuditEntry("Item " + item.getName() + "sold.");
 
         return totalFunds.subtract(item.getCost());

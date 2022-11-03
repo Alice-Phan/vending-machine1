@@ -107,7 +107,7 @@ public class VendingMachineController {
         Item selectedItem = serviceLayer.getItem(itemAsString[0]);
 
 //        view.allItemsBanner();
-        view.printAllItems(serviceLayer.listAllItems());
+//        view.printAllItems(serviceLayer.listAllItems());
         // Sell item
         try {
             serviceLayer.sellItem(balance, selectedItem);

@@ -57,3 +57,22 @@ Tue Jul 05 13:23:40 EDT 2022 :: Item Potato Chip has been sold. Number in Invent
 Tue Jul 05 13:24:17 EDT 2022 :: Item abc has been sold. Number in Inventory: 7
 Fri Oct 21 08:34:16 PDT 2022 :: Item Snickers Bar has been sold. Number in Inventory: 12
 2022-11-02T11:43:38.433313300 : Item Potato Chipsold.
+2022-11-02T16:26:53.127045700 : Item diet cokesold.
+2022-11-02T16:33:15.072628500 : Item eggsold.
+2022-11-02T16:46:50.457213900 : Item Orange Sconessold.
+2022-11-02T18:50:49.384199500 : Item ricesold.
+2022-11-02T23:46:41.752278300 : Item spritesold.
+2022-11-03T09:40:17.105372600 : Item coca-colasold.
+2022-11-03T09:43:02.560762200 : Item iced green teasold.
+2022-11-03T10:10:04.210780300 : Item boiled eggsold.
+2022-11-03T10:15:30.154135700 : Item boiled eggsold.
+2022-11-03T10:16:16.155901 : Item boiled eggsold.
+2022-11-03T10:20:39.773147100 : Item boiled eggsold.
+2022-11-03T10:28:09.240562100 : Item boiled eggsold.
+2022-11-03T10:28:55.274067100 : Item boiled eggsold.
+2022-11-03T10:30:11.042247200 : Item boiled eggsold.
+2022-11-03T10:31:14.714964700 : Item boiled eggsold.
+2022-11-03T10:41:33.636820600 : Item cheese burgersold.
+2022-11-03T10:42:56.302557700 : Item boiled eggsold.
+2022-11-03T10:46:42.398701700 : Item boiled eggsold.
+2022-11-03T10:55:36.271114300 : Item boiled eggsold.

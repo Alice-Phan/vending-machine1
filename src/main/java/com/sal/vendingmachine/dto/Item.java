@@ -4,6 +4,8 @@ package com.sal.vendingmachine.dto;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author salajrawi
@@ -15,6 +17,8 @@ public class Item {
     private String name;
     private BigDecimal cost;
     private int numInventoryItems;
+
+    private static final String DELIMITER = ",";
 
     public Item() {
     }
@@ -35,6 +39,10 @@ public class Item {
     //    public String getItemId() {
 //        return itemId;
 //    }
+
+
+
+
     public String getName() {
 
         return name;

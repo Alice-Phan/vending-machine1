@@ -31,7 +31,7 @@ public class VendingMachineView {
 
     // Display the Welcome Banner
     public void displayWelcomeBanner() {
-        io.print("=== Welcome to Alice's Vending Machine! ===\n");
+        io.print("=====Welcome to Alice's Vending Machine!=====");
     }
 
     // print main menu

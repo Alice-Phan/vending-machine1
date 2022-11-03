@@ -24,7 +24,7 @@ import static java.lang.System.out;
 public class FileDaoImpl implements FileDao{
 
     // Declare and initialize HashMap to store items after unmarshalling
-    private Map<String, Item> items = new HashMap<>();
+    private final Map<String, Item> items = new HashMap<>();
     private static final String ITEM_FILE = "items.txt";
     private static final String DELIMITER = ",";
 
@@ -38,15 +38,22 @@ public class FileDaoImpl implements FileDao{
          //implement
         String[] itemTokens = line.split(DELIMITER);
         // Initialize the item name and cost
+        Item item = new Item();
         String itemName = itemTokens[0];
+
+        BigDecimal empt = new BigDecimal(itemTokens[1]);
+        item.setCost(empt);
+
+        BigDecimal price = new BigDecimal(item.getCost());
+        out.println(price);
+        int quantity = Integer.parseInt(itemTokens[2]);
         // Instantiate new Item object
-        Item itemFromFile = new Item(itemName);
 
-        itemFromFile.setCost(new BigDecimal(itemTokens[1]).setScale(2, RoundingMode.DOWN));
+//        itemFromFile.setCost(new BigDecimal(itemTokens[1]).setScale(2, RoundingMode.DOWN));
+//
+//        itemFromFile.setNumInventoryItems(Integer.parseInt(itemTokens[2]));
 
-        itemFromFile.setNumInventoryItems(Integer.parseInt(itemTokens[2]));
-
-        return itemFromFile;
+        return new Item(itemName, item.getCost(), quantity);
 
     }
 
@@ -62,10 +69,11 @@ public class FileDaoImpl implements FileDao{
     // Write out the item object to the file
     @Override
     public void writeFile(List<Item> list) throws VendingMachineException{
+        PrintWriter out;
          try {
             //implement
             // Initialize   the PrintWriter object, pass the file that item is going to be written to
-             PrintWriter out;
+
              out = new PrintWriter(new FileWriter(ITEM_FILE));
         }
         catch(IOException e)

@@ -24,7 +24,7 @@ public class VendingMachineDaoImpl implements VendingMachineDao{
     
     @Override
     public Item getItem(String name) throws VendingMachineException{
-        itemMap=fio.readFile(ITEM_FILE);
+//        itemMap=fio.readFile(ITEM_FILE);
         return itemMap.get(name);
     }
 
@@ -53,6 +53,7 @@ public class VendingMachineDaoImpl implements VendingMachineDao{
     @Override
     public Item changeInventoryCount(Item item, int newCount) throws VendingMachineException{
         item.setNumInventoryItems(newCount);
+
         Item res=itemMap.put(item.getName(),item);
         fio.writeFile(new ArrayList<Item>(itemMap.values()));
         return res;
