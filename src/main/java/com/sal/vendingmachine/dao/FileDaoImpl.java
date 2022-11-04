@@ -26,7 +26,7 @@ public class FileDaoImpl implements FileDao{
     // Declare and initialize HashMap to store items after unmarshalling
     private final Map<String, Item> items = new HashMap<>();
     private static final String ITEM_FILE = "items.txt";
-    private static final String DELIMITER = ",";
+    private static final String DELIMITER = "::";
 
     /*
     This process converts XML content to Java object
@@ -36,25 +36,42 @@ public class FileDaoImpl implements FileDao{
     @Override
     public Item unmarshallItem(String line) {
          //implement
-        String[] itemTokens = line.split(DELIMITER);
-        // Initialize the item name and cost
-        Item item = new Item();
-        String itemName = itemTokens[0];
-
-        BigDecimal empt = new BigDecimal(itemTokens[1]);
-        item.setCost(empt);
-
-        BigDecimal price = new BigDecimal(item.getCost());
-        out.println(price);
-        int quantity = Integer.parseInt(itemTokens[2]);
-        // Instantiate new Item object
-
-//        itemFromFile.setCost(new BigDecimal(itemTokens[1]).setScale(2, RoundingMode.DOWN));
+//        String[] itemTokens = line.split(DELIMITER);
+//        // Initialize the item name and cost
+//        Item item = new Item();
+//        String itemName = itemTokens[0];
 //
-//        itemFromFile.setNumInventoryItems(Integer.parseInt(itemTokens[2]));
+//        BigDecimal empt = new BigDecimal(itemTokens[1]);
+//        item.setCost(empt);
+//
+//        BigDecimal price = new BigDecimal(item.getCost());
+//        out.println(price);
+//        int quantity = Integer.parseInt(itemTokens[2]);
+//        // Instantiate new Item object
+//
+////        itemFromFile.setCost(new BigDecimal(itemTokens[1]).setScale(2, RoundingMode.DOWN));
+////
+////        itemFromFile.setNumInventoryItems(Integer.parseInt(itemTokens[2]));
+//
+//        return new Item(itemName, item.getCost(), quantity);
 
-        return new Item(itemName, item.getCost(), quantity);
+            String[] itemTokens = line.split(DELIMITER);
 
+            String itemName;
+            BigDecimal cost;
+            int quantity;
+
+            Item itemFromFile = new Item();
+
+            if (itemTokens.length > 1) {
+                itemName = itemTokens[0];
+                cost = BigDecimal.valueOf(Double.parseDouble(itemTokens[1]));
+                quantity = Integer.parseInt(itemTokens[2]);
+                itemFromFile = new Item(itemName, cost, quantity);
+
+            }
+
+            return itemFromFile;
     }
 
     /*
@@ -122,6 +139,7 @@ public class FileDaoImpl implements FileDao{
         Item currentItem;
         while (scanner.hasNextLine()) {
             currentLine = scanner.nextLine();
+//            currentItem = new Item(currentLine);
             currentItem = unmarshallItem(currentLine);
             items.put(currentItem.getName(), currentItem);
         }

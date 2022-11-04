@@ -40,6 +40,9 @@ public class Change {
         coinChangeMap.put(NICKLE, nickels);
         funds = funds.subtract(NICKLE.getValue().multiply(BigDecimal.valueOf(nickels)));
 
+        int pennies = funds.divide(PENNY.getValue(),RoundingMode.DOWN).intValue();
+        coinChangeMap.put(PENNY, pennies);
+
 
         return coinChangeMap;
     }

@@ -1,4 +1,8 @@
-coke,2,10
+null::null::0
 
+burger::4.99::2
 
+coke::2.5::9
+
+sprite::2.45::4
 
